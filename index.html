@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,14 +15,14 @@
         <nav class="navbar">
             <div class="logo">SS Portfolio</div>
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#" class="btn-nav">Get in touch <span class="arrow">&rarr;</span></a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#deployments">Projects</a>
+                <a href="mailto:your.email@example.com" class="btn-nav">Get in touch <span class="arrow">&rarr;</span></a>
             </div>
         </nav>
 
-        <main class="hero-content">
+        <main id="home" class="hero-content">
             <div class="hero-left">
                 <p class="greeting">HEY, I AM SHUBHAM, A</p>
                 <h1>Cloud & DevOps<br>Architect</h1>
@@ -64,7 +64,7 @@
         </div>
     </section>
 
-    <section class="split-section">
+    <section id="deployments" class="split-section">
         <div class="split-left">
             <p class="section-tag">Infrastructure & Beyond</p>
             <h2>Architecting Systems That Handle Scale</h2>
@@ -73,13 +73,58 @@
             <p class="main-para">I'm a DevOps engineer focused on building robust, scalable infrastructure that solves real-world delivery problems and eliminates deployment bottlenecks.</p>
             <div class="footer-cta-wrapper">
                 <div class="cta-text">
-                    <span>Let's Build Something</span>
-                    <span class="muted">Meaningful Together</span>
+                    <span>Explore My Codebases</span>
+                    <span class="muted">Production-grade Repositories</span>
                 </div>
-                <a href="#" class="btn-pill">Get in touch <span class="arrow-circle">&rarr;</span></a>
+                <a href="https://github.com/shubham" target="_blank" class="btn-pill">View GitHub <span class="arrow-circle">&rarr;</span></a>
             </div>
         </div>
     </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            
+            <div class="about-left">
+                <p class="section-tag">// Professional Profile</p>
+                <h2>The Engineer Behind the Pipelines</h2>
+                <div class="about-quick-specs">
+                    <div class="spec-row">
+                        <span class="spec-label">Role:</span>
+                        <span class="spec-value">DevOps & Support Engineer</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Location:</span>
+                        <span class="spec-value">Jaipur, India</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">Focus:</span>
+                        <span class="spec-value">Cloud Architecture, Automation, IaC</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <p class="about-lead">
+                    I specialize in designing and maintaining high-availability cloud environments, eliminating manual operations deployment overhead, and configuring stable build delivery tracks. 
+                </p>
+                <div class="about-body-text">
+                    <p>
+                        With a foundation rooted in structural precision and automation logic, my day-to-day focus centers on writing clean, reusable declarative manifests using tools like Terraform, containerizing applications with Docker, and designing CI/CD pipelines via GitHub Actions.
+                    </p>
+                    <p>
+                        Beyond traditional cloud infrastructure administration, I am deeply invested in backend systems development. I work closely with Python and FastAPI to engineer secure APIs, build automation microservices, and orchestrate efficient server patterns that stay resilient under heavy traffic.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 // Engineered for maximum availability and trust. Built with HTML & CSS.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
