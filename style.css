@@ -494,3 +494,127 @@ footer {
         padding: 2rem;
     }
 }
+/* --- Project Page Layout Additions --- */
+.project-hero-section {
+    padding: 6rem 4rem 4rem 4rem;
+    max-width: 1200px;
+}
+
+.project-hero-lead {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-top: 1.5rem;
+}
+
+/* --- Standalone Production Cards Grid --- */
+.projects-showcase-section {
+    padding: 2rem 4rem 8rem 4rem;
+}
+
+.standalone-project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+}
+
+.showcase-card {
+    background-color: var(--bg-surface);
+    border: 1px solid #1a1a1a;
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showcase-card:hover {
+    border-color: #ff815e; /* Highlight border match with metric indices */
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-id {
+    color: #e04316;
+    font-weight: 600;
+}
+
+.card-category {
+    color: var(--text-muted);
+}
+
+.showcase-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.showcase-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+/* Micro Technology Pill Tokens */
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.card-tags span {
+    background-color: #121212;
+    border: 1px solid #262626;
+    color: #e5e5e5;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+.repo-action-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #262626;
+    padding-bottom: 0.5rem;
+    width: max-content;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.repo-action-link:hover {
+    color: #ff815e;
+    border-color: #ff815e;
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 768px) {
+    .standalone-project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .showcase-card {
+        padding: 2rem;
+    }
+    .project-hero-section, .projects-showcase-section {
+        padding: 4rem 2rem;
+    }
+    .project-hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
