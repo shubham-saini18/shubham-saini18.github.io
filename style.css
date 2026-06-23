@@ -1,13 +1,11 @@
-/* --- Global Resets & Variables --- */
+/* --- Design Tokens & Variables --- */
 :root {
-    --bg-main: #0f172a;
-    --bg-surface: #1e293b;
-    --accent: #10b981;
-    --accent-dim: rgba(16, 185, 129, 0.1);
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --max-width: 1100px;
+    --bg-dark: #0a0a0a;
+    --text-light: #ffffff;
+    --text-muted: #a3a3a3;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    /* Clean reproduction of the warm gradient in your reference image */
+    --hero-gradient: linear-gradient(135deg, #e04316 0%, #a8201a 40%, #170505 100%);
 }
 
 * {
@@ -16,245 +14,282 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    overflow-x: hidden;
 }
 
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* --- Typography --- */
-h1, h2, h3 {
-    font-weight: 800;
-    letter-spacing: -0.025em;
-}
-
-.mono-tag {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-/* --- Hero Section --- */
-.hero {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-}
-
-.accent-text {
-    color: var(--accent);
-}
-
-.hero-bio {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 650px;
-    margin-bottom: 2.5rem;
-}
-
-/* --- Buttons --- */
-.cta-group {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--bg-main);
-}
-
-.btn-primary:hover {
-    background-color: #0d9488;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-    background-color: var(--bg-surface);
-    border-color: var(--text-muted);
-}
-
-/* --- Sections Common --- */
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: var(--accent);
-}
-
-.skills-section, .projects-section {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* --- Technical Matrix (Skills Grid) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-}
-
-.skill-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-main);
-}
-
-.skill-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* --- Featured Deployments (Projects) --- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 2rem;
+/* --- Hero Wrapper with Rounded Bottom --- */
+.hero-wrapper {
+    background: var(--hero-gradient);
+    min-height: 90vh;
+    padding: 2rem 4rem 6rem 4rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    justify-content: space-between;
 }
 
-.project-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-}
-
-.card-header {
+/* --- Navigation Bar --- */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.25rem;
+    width: 100%;
 }
 
-.status-badge {
-    background-color: var(--accent-dim);
-    color: var(--accent);
-    padding: 0.25rem 0.7rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
+.logo {
     font-weight: 700;
-    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
 }
 
-.repo-lang {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-.project-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-.project-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.tech-tags {
+.nav-links {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 2.5rem;
 }
 
-.tech-tags span {
-    background-color: #0f172a;
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.project-link {
-    color: var(--accent);
+.nav-links a {
+    color: var(--text-light);
     text-decoration: none;
-    font-weight: 600;
     font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
 
-.project-link:hover {
-    text-decoration: underline;
+.nav-links a:hover {
+    opacity: 1;
 }
 
-/* --- Footer --- */
-footer {
-    padding: 3rem 0;
-    text-align: center;
-    color: var(--text-muted);
+.nav-links a.btn-nav {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 1;
+}
+
+.btn-nav .arrow {
+    background-color: #e04316;
+    color: #ffffff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.85rem;
 }
 
+/* --- Hero Content Layout --- */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.414fr 1fr;
+    gap: 4rem;
+    margin-top: 6rem;
+    align-items: flex-end;
+}
+
+.greeting {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.hero-left h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 4rem;
+}
+
+.hero-right {
+    padding-bottom: 1.5rem;
+}
+
+.hero-right h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.sub-description {
+    color: var(--text-light);
+    opacity: 0.75;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* --- Quick Metrics Grid --- */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.5rem;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.metric-item .num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ff815e;
+}
+
+.metric-item .label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
+    line-height: 1.3;
+}
+
+/* --- Core Technologies Bar --- */
+.tech-bar {
+    background-color: #121212;
+    margin: -2rem 4rem 0 4rem;
+    padding: 2.5rem;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.tech-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    line-height: 1.4;
+    min-width: 140px;
+}
+
+.tech-logos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-item {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e5e5e5;
+}
+
+/* --- Lower Split Content Section --- */
+.split-section {
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+}
+
+.section-tag {
+    color: #e04316;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.split-left h2 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.split-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-para {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin-bottom: 4rem;
+}
+
+/* --- Footer Link Card & Pill Button --- */
+.footer-cta-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #262626;
+    padding-top: 2rem;
+}
+
+.cta-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.cta-text .muted {
+    color: var(--text-muted);
+}
+
+.btn-pill {
+    background-color: #e04316;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-pill:hover {
+    transform: scale(1.03);
+}
+
+.arrow-circle {
+    background-color: #ffffff;
+    color: #e04316;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero { padding: 4rem 0; }
-    .skills-section, .projects-section { padding: 4rem 0; }
+@media (max-width: 1024px) {
+    .hero-content, .split-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .hero-wrapper { padding: 2rem; }
+    .tech-bar { margin: -2rem 2rem 0 2rem; flex-direction: column; gap: 1.5rem; }
+    .tech-logos { flex-wrap: wrap; gap: 1.5rem; }
+    .hero-left h1 { font-size: 3.5rem; }
+    .split-left h2 { font-size: 2.5rem; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 }
