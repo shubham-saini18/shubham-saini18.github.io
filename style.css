@@ -523,13 +523,13 @@ footer {
     background-color: var(--bg-surface);
     border: 1px solid #1a1a1a;
     border-radius: 16px;
-    padding: 3rem;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: space-between; /* Pushes bottom items down equally */
+    gap: 2rem;
+    transition: border-color 0.25s ease;
 }
-
 .showcase-card:hover {
     border-color: #ff815e; /* Highlight border match with metric indices */
 }
