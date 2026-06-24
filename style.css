@@ -636,7 +636,7 @@ footer {
     width: 100%;
     height: auto;
     max-height: 300px;
-    object-fit: contain;
+    object-fit: container;
     border-radius: 6px;
     filter: brightness(0.9) contrast(1.1); /* Matches premium dark UI */
     transition: filter 0.3s ease;
