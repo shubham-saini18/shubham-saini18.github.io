@@ -112,19 +112,20 @@ html, body {
    3.5 LANDING / HOME PAGE SPECIFIC STYLES (`index.html`)
    ========================================================================== */
 .home-hero-section {
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    padding: 6rem 4rem;
+    padding: 5rem 4rem;
+    background-color: var(--bg-dark);
 }
 
 .home-hero-container {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     gap: 5rem;
     align-items: center;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -135,32 +136,35 @@ html, body {
 }
 
 .home-hero-left h1 {
-    font-size: 4.5rem;
-    line-height: 1.05;
+    font-size: 3.75rem;
+    line-height: 1.1;
     font-weight: 800;
     letter-spacing: -0.03em;
     margin-bottom: 2rem;
     color: var(--text-light);
 }
 
-/* Subtle modern text stroke fallback rule */
 .home-hero-left h1 span {
-    display: inline-block;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(245, 245, 245, 0.6);
+    color: var(--primary-accent);
 }
 
-/* Focus Index Checklist Blocks */
+/* Structured Clean Lists */
 .home-focus-list {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
     margin-bottom: 2.5rem;
+    background: #111111;
+    padding: 1.25rem 1.75rem;
+    border-radius: 8px;
+    border: 1px solid #1a1a1a;
+    width: 100%;
+    max-width: 460px;
 }
 
 .focus-item {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--text-light);
     display: flex;
     align-items: center;
@@ -169,54 +173,62 @@ html, body {
 
 .focus-index {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--primary-accent);
+    font-weight: 600;
+}
+
+.focus-text {
+    color: var(--text-muted);
 }
 
 .home-subheadline {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .home-hero-lead {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     color: var(--text-muted);
-    max-width: 600px;
-    margin-bottom: 3rem;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
 }
 
-/* CTA Navigation Groups */
+/* Call To Action Buttons Layout */
 .home-cta-group {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .btn-primary {
     background-color: var(--primary-accent);
     color: #ffffff;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
     font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
     color: var(--text-light);
-    border: 1px solid var(--border-color);
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
+    border: 1px solid var(--border-card-inner);
+    padding: 0.85rem 1.75rem;
+    border-radius: 6px;
     font-weight: 500;
     text-decoration: none;
     font-size: 0.95rem;
@@ -225,37 +237,40 @@ html, body {
 
 .btn-secondary:hover {
     border-color: var(--text-light);
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* Terminal Display Mechanics */
+/* Terminal Graphic Box Components */
 .home-hero-right {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
 
 .mock-terminal {
     width: 100%;
-    max-width: 500px;
+    max-width: 460px;
     background-color: #0d0d0d;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
+    border: 1px solid var(--border-card-inner);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .terminal-header {
-    background-color: #121212;
-    padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid var(--border-color);
+    background-color: #141414;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border-card-inner);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
-.terminal-dot {
-    width: 10px;
-    height: 10px;
+.terminal-dots {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: #262626;
 }
@@ -264,19 +279,19 @@ html, body {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
-    margin-left: auto;
+    margin-left: 1.25rem;
 }
 
 .terminal-body {
-    padding: 1.5rem;
+    padding: 1.25rem;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.6;
-    color: #e5e5e5;
+    color: #d4d4d4;
 }
 
 .terminal-line {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .terminal-line.output {
@@ -287,44 +302,24 @@ html, body {
     color: var(--primary-accent);
 }
 
-/* Capabilities Section Positioning */
-.home-capabilities-section {
-    padding: 6rem 4rem;
-    border-top: 1px solid var(--border-color);
-    background-color: var(--bg-surface);
+.terminal-success {
+    color: #10b981;
 }
 
-.capabilities-container {
-    max-width: 1200px;
-}
-
-.capability-narrative-block h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-}
-
-.capability-desc {
-    color: var(--text-muted);
-    font-size: 1.15rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin-bottom: 2rem;
-}
-
-/* --- Responsive Adaptations --- */
+/* Responsive Adaptive Viewports */
 @media (max-width: 1024px) {
     .home-hero-container {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 3.5rem;
     }
     .home-hero-right {
-        justify-content: center;
+        justify-content: left;
     }
     .home-hero-left h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+    .home-focus-list {
+        max-width: 100%;
     }
 }
 /* ==========================================================================
