@@ -650,7 +650,7 @@ html, body {
 }
 
 .architecture-img {
-    width: 100%;
+    width: auto;
     height: auto;
     max-height: 420px;
     object-fit: container;
