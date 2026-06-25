@@ -426,6 +426,137 @@ footer {
     letter-spacing: -0.03em;
     margin-bottom: 3rem;
 }
+.about-certifications-block {
+    margin-top: 3rem;
+    border-top: 1px solid #262626;
+    padding-top: 2rem;
+    max-width: 400px;
+}
+.cert-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #e04316;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.cert-card {
+    background-color: #121212;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+.cert-badge {
+    background-color: #e04316;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 70px;
+    line-height: 1.2;
+}
+.cert-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.cert-name {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.cert-meta {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+.cert-status {
+    color: #ff815e;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 0.25rem;
+}
+/* --- Career Timeline Visual Grid --- */
+.career-timeline-section {
+    padding: 6rem 4rem;
+    border-top: 1px solid #1a1a1a;
+    background-color: var(--bg-surface);
+}
+
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    border-top: 1px solid #262626;
+    padding-top: 2rem;
+}
+
+.timeline-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    color: #e04316;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.timeline-company {
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.timeline-details h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.timeline-details p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* --- Subpage Responsive Fixes --- */
+@media (max-width: 1024px) {
+    .about-hero-container, .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .about-hero-section, .career-timeline-section {
+        padding: 4rem 2rem;
+    }
+    .about-hero-left h1 {
+        font-size: 2.75rem;
+    }
+    .subpage-nav {
+        padding: 2rem;
+    }
+    .about-certifications-block {
+        max-width: 100%;
+    }
+}
 
 /* --- Skills Deep Dive Section --- */
 .skills-deep-dive {
