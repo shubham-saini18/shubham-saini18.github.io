@@ -22,64 +22,61 @@
     </nav>
 
     <section class="home-hero-section">
-        <div class="home-hero-container">
+    <div class="home-hero-container">
+        
+        <div class="home-hero-left">
+            <p class="section-tag">// Professional Introduction</p>
+            <h1>Cloud & DevOps <span>Architect</span></h1>
             
-            <div class="home-hero-left">
-                <p class="section-tag">HEY, I AM SHUBHAM, A</p>
-                <h1>Cloud & DevOps <br><span>Architect</span></h1>
-                
-                <div class="home-focus-list">
-                    <div class="focus-item"><span class="focus-index">#01</span> AWS Multi-Cloud Expert</div>
-                    <div class="focus-item"><span class="focus-index">#02</span> CI/CD Pipeline Automation</div>
-                    <div class="focus-item"><span class="focus-index">#03</span> Kubernetes & Docker Stack</div>
-                    <div class="focus-item"><span class="focus-index">#04</span> Terraform & IaC Playbooks</div>
+            <div class="home-focus-list">
+                <div class="focus-item">
+                    <span class="focus-index">#01</span> 
+                    <span class="focus-text">AWS Multi-Cloud Expert</span>
                 </div>
-
-                <h2 class="home-subheadline">Great infrastructure should feel invisible.</h2>
-                <p class="home-hero-lead">
-                    From architecture design to continuous deployment, I build resilient, automated systems that connect and deliver application data seamlessly.
-                </p>
-                
-                <div class="home-cta-group">
-                    <a href="project.html" class="btn-primary">Explore My Projects &rarr;</a>
-                    <a href="about.html" class="btn-secondary">Read Profile</a>
+                <div class="focus-item">
+                    <span class="focus-index">#02</span> 
+                    <span class="focus-text">CI/CD Pipeline Automation</span>
+                </div>
+                <div class="focus-item">
+                    <span class="focus-index">#03</span> 
+                    <span class="focus-text">Kubernetes & Docker Stack</span>
+                </div>
+                <div class="focus-item">
+                    <span class="focus-index">#04</span> 
+                    <span class="focus-text">Terraform & IaC Playbooks</span>
                 </div>
             </div>
 
-            <div class="home-hero-right">
-                <div class="mock-terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
-                        <span class="terminal-title">bash — shubham@infra</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line"><span class="terminal-accent">$</span> terraform init && terraform apply -auto-approve</div>
-                        <div class="terminal-line output">Initializing the backend cloud infrastructure state...</div>
-                        <div class="terminal-line output">Matching core provider plugins...</div>
-                        <div class="terminal-line output"><span class="terminal-accent">✔</span> AWS EKS Production Cluster Provisioned Successfully.</div>
-                        <div class="terminal-line"><span class="terminal-accent">$</span> argo --namespace gitops app sync banking-app</div>
-                        <div class="terminal-line output">Syncing current state to remote Kubernetes cluster endpoint...</div>
-                        <div class="terminal-line output success"><span class="terminal-accent">✔</span> HEALTHY [Synced] — All Pod Lifecycle Tiers Active.</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="home-capabilities-section">
-        <div class="capabilities-container">
-            <div class="capability-narrative-block">
-                <p class="section-tag">INFRASTRUCTURE & BEYOND</p>
-                <h2>Architecting Systems That Handle Scale</h2>
-                <p class="capability-desc">
-                    I am a DevOps engineer focused on building robust, scalable infrastructure that solves real-world delivery problems and eliminates pipeline deployment bottlenecks.
-                </p>
-                <a href="https://github.com/Shubham-Saini" target="_blank" class="repo-action-link">Explore My Codebases Production-grade Repositories &rarr;</a>
+            <h2 class="home-subheadline">Great infrastructure should feel invisible.</h2>
+            <p class="home-hero-lead">
+                From architecture design to continuous deployment, I build resilient, automated systems that connect and deliver application data seamlessly.
+            </p>
+            
+            <div class="home-cta-group">
+                <a href="project.html" class="btn-primary">Explore Projects <span class="btn-arrow">&rarr;</span></a>
+                <a href="about.html" class="btn-secondary">Read Profile</a>
             </div>
         </div>
-    </section>
 
-    
+        <div class="home-hero-right">
+            <div class="mock-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot close"></span>
+                        <span class="dot minimize"></span>
+                        <span class="dot maximize"></span>
+                    </div>
+                    <span class="terminal-title">shubham@infra:~</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line"><span class="terminal-accent">$</span> tf init && tf apply -auto-approve</div>
+                    <div class="terminal-line output">Initializing cloud infrastructure deployment state...</div>
+                    <div class="terminal-line output"><span class="terminal-success">✔</span> AWS EKS Production Cluster Provisioned.</div>
+                    <div class="terminal-line"><span class="terminal-accent">$</span> kubectl get pods -n production</div>
+                    <div class="terminal-line output success"><span class="terminal-success">STATUS:</span> Running [Active Load Balancing Tier]</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
