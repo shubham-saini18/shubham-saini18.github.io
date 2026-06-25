@@ -112,18 +112,16 @@ html, body {
    3.5 LANDING / HOME PAGE SPECIFIC STYLES (`index.html`)
    ========================================================================== */
 .home-hero-section {
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 4rem;
-    position: relative;
-    overflow: hidden;
+    padding: 6rem 4rem;
 }
 
 .home-hero-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 5rem;
     align-items: center;
     width: 100%;
     max-width: 1300px;
@@ -137,29 +135,61 @@ html, body {
 }
 
 .home-hero-left h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     line-height: 1.05;
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     margin-bottom: 2rem;
     color: var(--text-light);
 }
 
+/* Subtle modern text stroke fallback rule */
 .home-hero-left h1 span {
-    display: block;
+    display: inline-block;
     color: transparent;
-    -webkit-text-stroke: 1px rgba(245, 245, 245, 0.4);
+    -webkit-text-stroke: 1px rgba(245, 245, 245, 0.6);
+}
+
+/* Focus Index Checklist Blocks */
+.home-focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.focus-item {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.focus-index {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--primary-accent);
+}
+
+.home-subheadline {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
 .home-hero-lead {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     color: var(--text-muted);
-    max-width: 580px;
+    max-width: 600px;
     margin-bottom: 3rem;
 }
 
-/* Landing Interactive Action Anchors */
+/* CTA Navigation Groups */
 .home-cta-group {
     display: flex;
     align-items: center;
@@ -169,15 +199,11 @@ html, body {
 .btn-primary {
     background-color: var(--primary-accent);
     color: #ffffff;
-    padding: 1rem 2rem;
+    padding: 0.9rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    border: 1px solid transparent;
+    font-size: 0.95rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -189,11 +215,11 @@ html, body {
 .btn-secondary {
     color: var(--text-light);
     border: 1px solid var(--border-color);
-    padding: 1rem 2rem;
+    padding: 0.9rem 2rem;
     border-radius: 50px;
     font-weight: 500;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -202,20 +228,19 @@ html, body {
     background-color: rgba(255, 255, 255, 0.03);
 }
 
-/* Right Column Terminal Window Graphics */
+/* Terminal Display Mechanics */
 .home-hero-right {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .mock-terminal {
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
     background-color: #0d0d0d;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
     overflow: hidden;
 }
 
@@ -245,7 +270,7 @@ html, body {
 .terminal-body {
     padding: 1.5rem;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     color: #e5e5e5;
 }
@@ -262,33 +287,44 @@ html, body {
     color: var(--primary-accent);
 }
 
-/* --- Home Mobile Responsiveness Patch --- */
+/* Capabilities Section Positioning */
+.home-capabilities-section {
+    padding: 6rem 4rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+}
+
+.capabilities-container {
+    max-width: 1200px;
+}
+
+.capability-narrative-block h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.capability-desc {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/* --- Responsive Adaptations --- */
 @media (max-width: 1024px) {
     .home-hero-container {
         grid-template-columns: 1fr;
         gap: 4rem;
-        text-align: center;
     }
-    .home-hero-left {
-        align-items: center;
+    .home-hero-right {
+        justify-content: center;
     }
     .home-hero-left h1 {
         font-size: 3.5rem;
-    }
-    .home-cta-group {
-        justify-content: center;
-    }
-    .mock-terminal {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .home-hero-section {
-        padding: 6rem 2rem;
-    }
-    .home-hero-left h1 {
-        font-size: 3rem;
     }
 }
 /* ==========================================================================
