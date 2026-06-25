@@ -1,54 +1,65 @@
-/* --- Design Tokens & Variables --- */
+/* ==========================================================================
+   1. CORE DESIGN SYSTEM & VARIABLES
+   ========================================================================== */
 :root {
     --bg-dark: #0a0a0a;
-    --bg-surface: #0d0d0d;
-    --text-light: #ffffff;
+    --bg-surface: #141414;
+    --text-light: #f5f5f5;
     --text-muted: #a3a3a3;
-    --font-main: 'Plus Jakarta Sans', sans-serif;
-    --hero-gradient: linear-gradient(135deg, #e04316 0%, #a8201a 40%, #170505 100%);
+    --primary-accent: #e04316;
+    --primary-hover: #ff815e;
+    --border-color: #1a1a1a;
+    --border-card-inner: #262626;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* --- Core Global Resets --- */
+/* ==========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     background-color: var(--bg-dark);
     color: var(--text-light);
-    font-family: var(--font-main);
-    overflow-x: hidden;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- Hero Wrapper with Rounded Corners --- */
-.hero-wrapper {
-    background: var(--hero-gradient);
-    min-height: 90vh;
-    padding: 2rem 4rem 6rem 4rem;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* Global Section Tag Utility */
+.section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--primary-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
 }
 
-/* --- Navigation Bar --- */
+/* ==========================================================================
+   3. NAVIGATION ARCHITECTURE
+   ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    z-index: 100;
+}
+
+.subpage-nav {
+    padding: 2rem 4rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: -0.02em;
 }
@@ -64,351 +75,43 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover {
     opacity: 1;
 }
 
-.nav-links a.btn-nav {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0.6rem 1.25rem;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    opacity: 1;
-}
-
-.btn-nav .arrow {
-    background-color: #e04316;
-    color: #ffffff;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-}
-
-/* --- Hero Layout Content --- */
-.hero-content {
-    display: grid;
-    grid-template-columns: 1.414fr 1fr;
-    gap: 4rem;
-    margin-top: 6rem;
-    align-items: flex-end;
-}
-
-.greeting {
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-    opacity: 0.9;
-}
-
-.hero-left h1 {
-    font-size: 5rem;
-    line-height: 1.05;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 4rem;
-}
-
-.hero-right {
-    padding-bottom: 1.5rem;
-}
-
-.hero-right h2 {
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.sub-description {
-    color: var(--text-light);
-    opacity: 0.75;
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-/* --- Quick Technical Indicators --- */
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 1.5rem;
-}
-
-.metric-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.metric-item .num {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #ff815e;
-}
-
-.metric-item .label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    opacity: 0.9;
-    line-height: 1.3;
-}
-
-/* --- Core Technology Dynamic Banner --- */
-.tech-bar {
-    background-color: #121212;
-    margin: -2rem 4rem 0 4rem;
-    padding: 2.5rem;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
-.tech-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    line-height: 1.4;
-    min-width: 140px;
-}
-
-.tech-logos {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.logo-item {
-    font-size: 1.2rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #e5e5e5;
-}
-
-/* --- Split Section (Deployments Context) --- */
-.split-section {
-    padding: 8rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 6rem;
-}
-
-.section-tag {
-    color: #e04316;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.split-left h2 {
-    font-size: 3.5rem;
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-}
-
-.split-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.main-para {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    color: #e5e5e5;
-    margin-bottom: 4rem;
-}
-
-.footer-cta-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #262626;
-    padding-top: 2rem;
-}
-
-.cta-text {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.cta-text .muted {
-    color: var(--text-muted);
-}
-
-.btn-pill {
-    background-color: #e04316;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    transition: transform 0.2s ease;
-}
-
-.btn-pill:hover {
-    transform: scale(1.03);
-}
-
-.arrow-circle {
-    background-color: #ffffff;
-    color: #e04316;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* --- About Section Configuration --- */
-.about-section {
-    padding: 8rem 4rem;
-    background-color: var(--bg-surface);
-    border-top: 1px solid #1a1a1a;
-}
-
-.about-container {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 6rem;
-}
-
-.about-left .section-tag {
-    color: #e04316;
-    font-size: 0.9rem;
-    font-weight: 600;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-}
-
-.about-left h2 {
-    font-size: 3.5rem;
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-}
-
-.about-quick-specs {
-    border-top: 1px solid #262626;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
-}
-
-.spec-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.95rem;
-}
-
-.spec-label {
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.spec-value {
-    color: var(--text-light);
-    font-weight: 600;
-}
-
-.about-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.about-lead {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.about-body-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-/* --- Minimal Clean Footer --- */
-footer {
-    padding: 4rem;
-    border-top: 1px solid #1a1a1a;
-    background-color: var(--bg-dark);
-}
-
-.footer-container {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
-    .hero-content, .split-section, .about-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .hero-wrapper { padding: 2rem; }
-    .tech-bar { margin: -2rem 2rem 0 2rem; flex-direction: column; gap: 1.5rem; }
-    .tech-logos { flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start; }
-    .hero-left h1 { font-size: 3.5rem; }
-    .split-left h2, .about-left h2 { font-size: 2.5rem; }
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    
-    .about-section, .split-section { padding: 6rem 2rem; }
-    footer { padding: 4rem 2rem; }
-}
-/* --- Subpage Configuration Extensions --- */
-.subpage-body {
-    background-color: var(--bg-dark);
-}
-
-.subpage-nav {
-    padding: 2rem 4rem;
-    border-bottom: 1px solid #1a1a1a;
-}
-
 .active-link {
-    color: #e04316 !important;
+    color: var(--primary-accent) !important;
     font-weight: 600 !important;
     opacity: 1 !important;
 }
 
-/* --- About Page Hero Structure --- */
+.btn-nav {
+    border: 1px solid var(--border-card-inner);
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    background-color: transparent;
+    opacity: 1 !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-nav:hover {
+    border-color: var(--primary-hover);
+    color: var(--primary-hover);
+}
+
+.arrow {
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   4. ABOUT PAGE SPECIFIC STYLES
+   ========================================================================== */
 .about-hero-section {
     padding: 6rem 4rem;
 }
@@ -426,33 +129,63 @@ footer {
     letter-spacing: -0.03em;
     margin-bottom: 3rem;
 }
+
+.about-quick-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.spec-value {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Certifications UI Layout */
 .about-certifications-block {
     margin-top: 3rem;
-    border-top: 1px solid #262626;
+    border-top: 1px solid var(--border-card-inner);
     padding-top: 2rem;
     max-width: 400px;
 }
+
 .cert-title {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.85rem;
-    color: #e04316;
+    color: var(--primary-accent);
     margin-bottom: 1.25rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
 .cert-card {
     background-color: #121212;
-    border: 1px solid #262626;
+    border: 1px solid var(--border-card-inner);
     border-radius: 8px;
     padding: 1.25rem;
     display: flex;
     gap: 1.25rem;
     align-items: center;
 }
+
 .cert-badge {
-    background-color: #e04316;
+    background-color: var(--primary-accent);
     color: #ffffff;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 700;
     padding: 0.5rem;
@@ -461,33 +194,70 @@ footer {
     min-width: 70px;
     line-height: 1.2;
 }
+
 .cert-info {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
+
 .cert-name {
     color: var(--text-light);
     font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.4;
 }
+
 .cert-meta {
     color: var(--text-muted);
     font-size: 0.8rem;
 }
+
 .cert-status {
-    color: #ff815e;
+    color: var(--primary-hover);
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     margin-top: 0.25rem;
 }
-/* --- Career Timeline Visual Grid --- */
+
+.about-lead {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.01em;
+}
+
+.about-body-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-body-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Career Timeline Infrastructure */
 .career-timeline-section {
     padding: 6rem 4rem;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid var(--border-color);
     background-color: var(--bg-surface);
+}
+
+.section-container {
+    width: 100%;
+}
+
+.subpage-section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
 }
 
 .timeline-wrapper {
@@ -502,7 +272,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-    border-top: 1px solid #262626;
+    border-top: 1px solid var(--border-card-inner);
     padding-top: 2rem;
 }
 
@@ -513,8 +283,8 @@ footer {
 }
 
 .timeline-date {
-    font-family: 'JetBrains Mono', monospace;
-    color: #e04316;
+    font-family: var(--font-mono);
+    color: var(--primary-accent);
     font-weight: 600;
     font-size: 0.95rem;
 }
@@ -538,97 +308,19 @@ footer {
     line-height: 1.6;
 }
 
-/* --- Subpage Responsive Fixes --- */
-@media (max-width: 1024px) {
-    .about-hero-container, .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    .about-hero-section, .career-timeline-section {
-        padding: 4rem 2rem;
-    }
-    .about-hero-left h1 {
-        font-size: 2.75rem;
-    }
-    .subpage-nav {
-        padding: 2rem;
-    }
-    .about-certifications-block {
-        max-width: 100%;
-    }
-}
-
-/* --- Skills Deep Dive Section --- */
-.skills-deep-dive {
-    padding: 6rem 4rem;
-    background-color: var(--bg-surface);
-    border-top: 1px solid #1a1a1a;
-}
-
-.section-container {
-    width: 100%;
-}
-
-.subpage-section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 4rem;
-    letter-spacing: -0.02em;
-}
-
-.detailed-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-}
-
-.detailed-skill-card {
-    border-top: 1px solid #262626;
-    padding-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.card-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    color: #e04316;
-    font-weight: 600;
-}
-
-.detailed-skill-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-}
-
-.detailed-skill-card p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* --- Subpage Responsive Fixes --- */
-@media (max-width: 1024px) {
-    .about-hero-container {
-        grid-template-columns: 1fr;
-        gap: 3.5rem;
-    }
-    .about-hero-section, .skills-deep-dive {
-        padding: 4rem 2rem;
-    }
-    .about-hero-left h1 {
-        font-size: 2.75rem;
-    }
-    .subpage-nav {
-        padding: 2rem;
-    }
-}
-/* --- Project Page Layout Additions --- */
+/* ==========================================================================
+   5. PROJECTS SHOWCASE STYLES & LAYOUT FIXES
+   ========================================================================== */
 .project-hero-section {
     padding: 6rem 4rem 4rem 4rem;
     max-width: 1200px;
+}
+
+.project-hero-section h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
 .project-hero-lead {
@@ -639,43 +331,57 @@ footer {
     margin-top: 1.5rem;
 }
 
-/* --- Standalone Production Cards Grid --- */
 .projects-showcase-section {
     padding: 2rem 4rem 8rem 4rem;
 }
 
+/* Asymmetric / Uniform Grid Allocation */
 .standalone-project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 3rem;
 }
 
+/* Layout Clean Execution: Isolates top and bottom to eliminate alignment gaps */
 .showcase-card {
     background-color: var(--bg-surface);
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes bottom items down equally */
+    justify-content: space-between;
     gap: 2rem;
-    transition: border-color 0.25s ease;
+    transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .showcase-card:hover {
-    border-color: #ff815e; /* Highlight border match with metric indices */
+    border-color: var(--primary-hover);
+}
+
+.card-top-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: auto; /* Permanently pins media/action containers down */
 }
 
 .card-meta {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.8rem;
     margin-bottom: 1.5rem;
 }
 
 .card-id {
-    color: #e04316;
+    color: var(--primary-accent);
     font-weight: 600;
 }
 
@@ -692,68 +398,34 @@ footer {
 
 .showcase-card p {
     color: var(--text-muted);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.6;
-    margin-bottom: 2.5rem;
-    flex-grow: 1;
+    margin-bottom: 1.5rem;
 }
 
-/* Micro Technology Pill Tokens */
+/* Technology Tags */
 .card-tags {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
 }
 
 .card-tags span {
     background-color: #121212;
-    border: 1px solid #262626;
+    border: 1px solid var(--border-card-inner);
     color: #e5e5e5;
     padding: 0.35rem 0.75rem;
     border-radius: 6px;
     font-size: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 600;
 }
 
-.repo-action-link {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #262626;
-    padding-bottom: 0.5rem;
-    width: max-content;
-    transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.repo-action-link:hover {
-    color: #ff815e;
-    border-color: #ff815e;
-}
-
-/* --- Mobile Responsiveness Adjustments --- */
-@media (max-width: 768px) {
-    .standalone-project-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .showcase-card {
-        padding: 2rem;
-    }
-    .project-hero-section, .projects-showcase-section {
-        padding: 4rem 2rem;
-    }
-    .project-hero-section h1 {
-        font-size: 2.5rem;
-    }
-}
-/* --- Project Architecture Diagram Styles --- */
+/* Dynamic Diagram Architecture Windows */
 .project-architecture-container {
     width: 100%;
     background-color: #121212;
-    border: 1px solid #262626;
+    border: 1px solid var(--border-card-inner);
     border-radius: 12px;
     padding: 1.5rem;
     overflow: hidden;
@@ -761,7 +433,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: auto;
-    min-height: 280px
+    min-height: 280px;
 }
 
 .architecture-img {
@@ -770,10 +442,88 @@ footer {
     max-height: 420px;
     object-fit: contain;
     border-radius: 6px;
-    filter: brightness(0.9) contrast(1.05); 
+    filter: brightness(0.9) contrast(1.05);
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .showcase-card:hover .architecture-img {
     filter: brightness(1) contrast(1.05);
+}
+
+.repo-action-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-card-inner);
+    padding-bottom: 0.5rem;
+    width: max-content;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.repo-action-link:hover {
+    color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   6. GLOBAL STRUCTURAL FOOTER
+   ========================================================================== */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 4rem;
+    background-color: var(--bg-dark);
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: text-start;
+}
+
+footer p {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   7. FLUID MEDIA RESPONSIVENESS CAPABILITIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-hero-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+    .about-hero-left h1, .project-hero-section h1 {
+        font-size: 2.75rem;
+    }
+    .about-certifications-block {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .standalone-project-grid, .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .subpage-nav {
+        padding: 2rem;
+    }
+    .about-hero-section, .career-timeline-section, .project-hero-section, .projects-showcase-section, footer {
+        padding: 4rem 2rem;
+    }
+    .showcase-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .standalone-project-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; /* Recommended layout breakpoint mitigation strategy for mobile views */
+    }
 }
