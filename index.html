@@ -4,79 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Saini | Cloud & DevOps Architect</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; }
+    </style>
 </head>
-<body>
+<body class="text-[#f5f5f5] font-sans antialiased selection:bg-[#e04316]/30 selection:text-[#ff815e]">
 
-    <nav class="navbar subpage-nav">
-        <div class="logo">Shubham Saini</div>
-        <div class="nav-links">
-            <a href="index.html" class="active-link">Home</a>
-            <a href="about.html">About</a>
-            <a href="project.html">Projects</a>
-            <a href="mailto:sainishubham416@gmail.com" class="btn-nav">Get in touch <span class="arrow">&rarr;</span></a>
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-[#1a1a1a] px-6 lg:px-16 py-4 flex justify-between items-center">
+        <div class="text-xl font-extrabold tracking-tight hover:text-[#e04316] transition-colors duration-200 cursor-pointer">
+            Shubham Saini [cite: 2]
+        </div>
+        <div class="flex items-center gap-6 sm:gap-8 font-medium text-sm text-[#a3a3a3]">
+            <a href="#home" class="transition-colors duration-200 hover:text-[#f5f5f5] text-[#e04316] font-semibold">Home</a>
+            <a href="#experience" class="transition-colors duration-200 hover:text-[#f5f5f5]">Experience</a>
+            <a href="mailto:sainishubham416@gmail.com" class="hidden sm:inline-flex items-center gap-2 border border-[#262626] px-4 py-2 rounded-full hover:border-[#ff815e] hover:text-[#ff815e] transition-all duration-300 group">
+                Get in touch <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+            </a>
         </div>
     </nav>
 
-    <section class="home-hero-section">
-    <div class="home-hero-container">
+    <main class="max-w-7xl mx-auto px-6 lg:px-16 py-12 lg:py-20 space-y-24" id="home">
         
-        <div class="home-hero-left">
-            <p class="section-tag">// Professional Introduction</p>
-            <h1>Cloud & DevOps <span>Architect</span></h1>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <div class="home-focus-list">
-                <div class="focus-item">
-                    <span class="focus-index">#01</span> 
-                    <span class="focus-text">AWS Multi-Cloud Expert</span>
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#e04316] uppercase tracking-widest bg-[#e04316]/5 border border-[#e04316]/10 px-3 py-1 rounded">
+                    <i class="fa-solid fa-microchip text-[10px]"></i> // Professional Portfolio
                 </div>
-                <div class="focus-item">
-                    <span class="focus-index">#02</span> 
-                    <span class="focus-text">CI/CD Pipeline Automation</span>
-                </div>
-                <div class="focus-item">
-                    <span class="focus-index">#03</span> 
-                    <span class="focus-text">Kubernetes & Docker Stack</span>
-                </div>
-                <div class="focus-item">
-                    <span class="focus-index">#04</span> 
-                    <span class="focus-text">Terraform & IaC Playbooks</span>
-                </div>
-            </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight text-[#f5f5f5]">
+                    Cloud & DevOps <br />
+                    <span class="text-[#e04316]">Architect</span>
+                </h1>
 
-            <h2 class="home-subheadline">Great infrastructure should feel invisible.</h2>
-            <p class="home-hero-lead">
-                From architecture design to continuous deployment, I build resilient, automated systems that connect and deliver application data seamlessly.
-            </p>
-            
-            <div class="home-cta-group">
-                <a href="project.html" class="btn-primary">Explore Projects <span class="btn-arrow">&rarr;</span></a>
-                <a href="about.html" class="btn-secondary">Read Profile</a>
-            </div>
-        </div>
-
-        <div class="home-hero-right">
-            <div class="mock-terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dots">
-                        <span class="dot close"></span>
-                        <span class="dot minimize"></span>
-                        <span class="dot maximize"></span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl bg-[#111111] p-5 rounded-xl border border-[#1a1a1a]">
+                    <div class="flex items-center gap-3 text-sm font-medium">
+                        <span class="font-mono text-xs text-[#e04316] font-bold">#01</span>
+                        <span class="text-[#a3a3a3]">AWS Multi-Cloud Expert</span>
                     </div>
-                    <span class="terminal-title">shubham@infra:~</span>
+                    <div class="flex items-center gap-3 text-sm font-medium">
+                        <span class="font-mono text-xs text-[#e04316] font-bold">#02</span>
+                        <span class="text-[#a3a3a3]">CI/CD Pipeline Automation</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-medium">
+                        <span class="font-mono text-xs text-[#e04316] font-bold">#03</span>
+                        <span class="text-[#a3a3a3]">Kubernetes & Docker Stack</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-medium">
+                        <span class="font-mono text-xs text-[#e04316] font-bold">#04</span>
+                        <span class="text-[#a3a3a3]">Terraform & IaC Playbooks</span>
+                    </div>
                 </div>
-                <div class="terminal-body">
-                    <div class="terminal-line"><span class="terminal-accent">$</span> tf init && tf apply -auto-approve</div>
-                    <div class="terminal-line output">Initializing cloud infrastructure deployment state...</div>
-                    <div class="terminal-line output"><span class="terminal-success">✔</span> AWS EKS Production Cluster Provisioned.</div>
-                    <div class="terminal-line"><span class="terminal-accent">$</span> kubectl get pods -n production</div>
-                    <div class="terminal-line output success"><span class="terminal-success">STATUS:</span> Running [Active Load Balancing Tier]</div>
+
+                <div class="space-y-3 max-w-xl">
+                    <h2 class="text-xl font-bold tracking-tight text-[#f5f5f5]">Great infrastructure should feel invisible.</h2>
+                    <p class="text-base text-[#a3a3a3] leading-relaxed">
+                        From single blueprint architectures to automated, continuous multi-stage deployment workflows, I build resilient software operational zones that run flawlessly at scale.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#experience" class="bg-[#e04316] hover:bg-[#ff815e] text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-lg shadow-[#e04316]/10 transform hover:-translate-y-0.5">
+                        Explore Experience &rarr;
+                    </a>
+                    <a href="https://github.com/Shubham-Saini" target="_blank" class="border border-[#262626] bg-[#111111] hover:bg-[#161616] text-[#f5f5f5] px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200 inline-flex items-center gap-2">
+                        <i class="fa-brands fa-github text-base"></i> GitHub Frameworks [cite: 3]
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="w-full max-w-[460px] bg-[#0d0d0d] border border-[#262626] rounded-xl shadow-2xl shadow-black/80 overflow-hidden font-mono text-xs leading-relaxed">
+                    <div class="bg-[#141414] border-b border-[#262626] px-4 py-3 flex justify-between items-center">
+                        <div class="flex gap-1.5">
+                          <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                          <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                          <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                        </div>
+                        <span class="text-[#a3a3a3] text-[10px]">shubham@infra:~</span>
+                    </div>
+                    <div class="p-5 space-y-4 text-[#d4d4d4]">
+                        <div>
+                          <span class="text-[#e04316]">$</span> tf init && tf apply -auto-approve
+                          <div class="text-[#a3a3a3] mt-1">Initializing cloud cloud state machine orchestrator backend...</div>
+                          <div class="text-[#10b981]">✔ AWS EKS Production Core Clusters Sync Complete.</div>
+                        </div>
+                        <div>
+                          <span class="text-[#e04316]">$</span> kubectl get pods -n production
+                          <div class="text-[#10b981] font-semibold mt-1">STATUS: Active [99.9% App Availability Matrix] [cite: 23]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-[#1a1a1a] pt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+            <div class="lg:col-span-4">
+                <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#e04316] uppercase tracking-widest mb-4">
+                    <i class="fa-solid fa-layer-group text-[10px]"></i> // Deep Stack Capability
+                </div>
+                <h3 class="text-2xl font-bold tracking-tight">Architecting Systems That Handle Scale</h3>
+                <p class="text-[#a3a3a3] text-sm mt-3 leading-relaxed">
+                    Specialized in writing declarative, high-availability layouts that eliminate developer pipeline dependencies and deployment bottlenecks.
+                </p>
+            </div>
+            <div class="lg:col-span-8 space-y-6">
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">AWS (EC2, S3, RDS, Lambda, EKS) [cite: 8]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Terraform [cite: 8]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Ansible [cite: 8]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Kubernetes [cite: 10]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Docker [cite: 10]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Jenkins [cite: 9]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">ArgoCD [cite: 10]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Prometheus & Grafana [cite: 11]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">ELK Stack [cite: 11]</span>
+                    <span class="bg-[#141414] border border-[#262626] text-sm font-medium text-[#d4d4d4] px-4 py-2 rounded-lg">Python & Shell [cite: 8]</span>
+                </div>
+                
+                <div class="bg-gradient-to-r from-[#111111] to-[#161616] border border-[#262626] rounded-xl p-6 flex flex-col sm:flex-row gap-5 items-start sm:items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-[#e04316] text-white font-mono text-xs font-bold p-3 rounded-lg tracking-tight shadow-md">
+                            AWS SAA
+                        </div>
+                        <div>
+                            <h4 className="text-sm font-bold text-[#f5f5f5]">Ultimate AWS Certified Solutions Architect Associate</h4>
+                            <p class="text-xs text-[#a3a3a3] mt-0.5">Stephane Maarek • Udemy Credentials (27 Hrs Complete)</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono font-semibold bg-[#e04316]/10 text-[#ff815e] px-3 py-1 rounded border border-[#e04316]/20 whitespace-nowrap">
+                        Active Readiness Prep
+                    </span>
                 </div>
             </div>
         </div>
 
-    </div>
-</section>
+        <div class="border-t border-[#1a1a1a] pt-16 max-w-3xl mx-auto space-y-12" id="experience">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#e04316] uppercase tracking-widest">
+                    <i class="fa-solid fa-briefcase text-[10px]"></i> // Career Journey
+                </div>
+                <h2 class="text-3xl font-extrabold tracking-tight">Professional Experience [cite: 13]</h2>
+            </div>
+
+            <div class="relative border-l border-[#262626] ml-3 pl-8 space-y-12">
+              
+                <div class="relative group">
+                    <span class="absolute -left-[37px] top-1 bg-[#e04316] w-2.5 h-2.5 rounded-full ring-4 ring-[#0a0a0a] group-hover:scale-125 transition-transform duration-200"></span>
+                    <div class="flex flex-wrap items-center justify-between gap-2 text-sm font-mono text-[#a3a3a3] mb-1">
+                        <div class="flex items-center gap-4">
+                            <span class="text-[#e04316] font-semibold">Jan 2026 – Present [cite: 15]</span>
+                            <span>•</span>
+                            <span class="text-[#f5f5f5] font-semibold">Sarvika Technologies Pvt. Ltd. [cite: 16]</span>
+                        </div>
+                        <span class="text-xs flex items-center gap-1.5"><i class="fa-solid fa-location-dot"></i> Jaipur, India [cite: 16]</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#f5f5f5] mb-2">Tech-Support Executive [cite: 14]</h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Providing enterprise-tier technical root-cause tracking and diagnostic workflows for containerized runtime projects and cloud-based infrastructure[cite: 17].
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <span class="absolute -left-[37px] top-1 bg-[#262626] group-hover:bg-[#e04316] w-2.5 h-2.5 rounded-full ring-4 ring-[#0a0a0a] group-hover:scale-125 transition-transform duration-200"></span>
+                    <div class="flex flex-wrap items-center justify-between gap-2 text-sm font-mono text-[#a3a3a3] mb-1">
+                        <div class="flex items-center gap-4">
+                            <span class="text-[#a3a3a3] font-semibold">Jun 2022 – Mar 2024 [cite: 19]</span>
+                            <span>•</span>
+                            <span class="text-[#f5f5f5] font-semibold">LTIMindtree [cite: 20]</span>
+                        </div>
+                        <span class="text-xs flex items-center gap-1.5"><i class="fa-solid fa-location-dot"></i> India Hub</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#f5f5f5] mb-2">DevOps Engineer [cite: 18]</h3>
+                    <div class="text-sm text-[#a3a3a3] space-y-2 leading-relaxed">
+                        <p>• Authored declarative Infrastructure as Code (IaC) architectures with Terraform and Ansible configurations[cite: 21].</p>
+                        <p>• Engineered real-time health-logging frameworks via Prometheus, Grafana, and core ELK stacks keeping infrastructure uptime metrics within stable parameters[cite: 23].</p>
+                        <p>• Replaced manual tasks with clean, scalable Python and Shell script pipelines reducing repetitive task cycles by roughly 60%[cite: 24].</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-[#1a1a1a] pt-10 mt-6 space-y-4">
+                <h4 class="font-mono text-xs font-semibold text-[#a3a3a3] uppercase tracking-widest">// Academic Foundation</h4>
+                <div class="bg-[#111111] border border-[#1a1a1a] p-5 rounded-xl flex justify-between items-center flex-wrap gap-4">
+                    <div>
+                        <h5 class="text-sm font-bold text-[#f5f5f5]">Bachelor of Technology (Mechanical Engineering) [cite: 32]</h5>
+                        <p class="text-xs text-[#a3a3a3] mt-1">Swami Keshvanand Institute of Technology (SKIT), Jaipur [cite: 33]</p>
+                    </div>
+                    <span class="text-xs font-mono font-semibold text-[#e04316] bg-[#e04316]/5 px-2.5 py-1 rounded border border-[#e04316]/10 whitespace-nowrap">
+                        Cohort 2016 - 2020 [cite: 34]
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+</body>
+</html>
