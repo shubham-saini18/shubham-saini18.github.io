@@ -4,116 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Cloud & DevOps Architect</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; }
+    </style>
 </head>
-<body class="subpage-body">
+<body class="text-[#f5f5f5] font-sans antialiased selection:bg-[#e04316]/30 selection:text-[#ff815e]">
 
-    <!-- SUBPAGE NAVIGATION -->
-    <nav class="navbar subpage-nav">
-        <div class="logo">SS Portfolio</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active-link">About</a>
-            <a href="project.html">Projects</a>
-            <a href="mailto:sainishubham416@gmail.com" class="btn-nav">Get in touch <span class="arrow">&rarr;</span></a>
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-[#1a1a1a] px-6 lg:px-16 py-4 flex justify-between items-center">
+        <div class="text-xl font-extrabold tracking-tight hover:text-[#e04316] transition-colors duration-200 cursor-pointer">
+            Shubham Saini
+        </div>
+        <div class="flex items-center gap-6 sm:gap-8 font-medium text-sm text-[#a3a3a3]">
+            <a href="index.html" class="transition-colors duration-200 hover:text-[#f5f5f5]">Home</a>
+            <a href="about.html" class="transition-colors duration-200 hover:text-[#f5f5f5] text-[#e04316] font-semibold">About</a>
+            <a href="project.html" class="transition-colors duration-200 hover:text-[#f5f5f5]">Projects</a>
+            <a href="mailto:sainishubham416@gmail.com" class="hidden sm:inline-flex items-center gap-2 border border-[#262626] px-4 py-2 rounded-full hover:border-[#ff815e] hover:text-[#ff815e] transition-all duration-300 group">
+                Contact <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+            </a>
         </div>
     </nav>
 
-    <!-- MAIN ABOUT HEADER SPLIT -->
-    <section class="about-hero-section">
-        <div class="about-hero-container">
-            <div class="about-hero-left">
-                <p class="section-tag">// Professional Profile</p>
-                <h1>Bridging Code, Cloud, & Infrastructure Automation</h1>
-                
-                <div class="about-quick-specs">
-                    <div class="spec-row">
-                        <span class="spec-label">Experience:</span>
-                        <span class="spec-value">DevOps Engineer (1.5+ Years)</span>
+    <section class="max-w-7xl mx-auto px-6 lg:px-16 pt-16 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            <div class="lg:col-span-5 space-y-8">
+                <div class="space-y-4">
+                    <p class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#e04316] uppercase tracking-widest bg-[#e04316]/5 border border-[#e04316]/10 px-3 py-1 rounded">
+                        <i class="fa-solid fa-user-gear text-[10px]"></i> // Professional Profile
+                    </p>
+                    <h1 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight text-[#f5f5f5]">
+                        Bridging Code, Cloud, & <br><span class="text-[#e04316]">Infrastructure Automation</span>
+                    </h1>
+                </div>
+
+                <div class="bg-[#111111] border border-[#1a1a1a] rounded-xl p-5 divide-y divide-[#1a1a1a] font-mono text-xs">
+                    <div class="flex justify-between py-2.5">
+                        <span class="text-[#a3a3a3]">Experience:</span>
+                        <span class="text-[#f5f5f5] font-semibold">DevOps Engineer (1.5+ Years)</span>
                     </div>
-                    <div class="spec-row">
-                        <span class="spec-label">Location:</span>
-                        <span class="spec-value">Jaipur, India</span>
+                    <div class="flex justify-between py-2.5">
+                        <span class="text-[#a3a3a3]">Location:</span>
+                        <span class="text-[#f5f5f5] font-semibold">Jaipur, India</span>
                     </div>
-                    <div class="spec-row">
-                        <span class="spec-label">Education:</span>
-                        <span class="spec-value">B.Tech, SKIT Jaipur (2016-2020)</span>
+                    <div class="flex justify-between py-2.5">
+                        <span class="text-[#a3a3a3]">Education:</span>
+                        <span class="text-[#f5f5f5] font-semibold">B.Tech, SKIT Jaipur (2016-2020)</span>
                     </div>
                 </div>
 
-                <!-- CERTIFICATIONS BLOCK -->
-                <div class="about-certifications-block">
-                    <h4 class="cert-title">// Education & Upskilling</h4>
-                    <div class="cert-card">
-                        <div class="cert-badge">AWS SAA</div>
-                        <div class="cert-info">
-                            <span class="cert-name">Ultimate AWS Certified Solutions Architect Associate</span>
-                            <span class="cert-meta">Issued by Udemy • June 16, 2026</span>
-                            <span class="cert-status">Preparation Complete (27 Hours Training)</span>
+                <div class="space-y-3">
+                    <h4 class="font-mono text-xs font-semibold text-[#a3a3a3] uppercase tracking-widest">// Education & Upskilling</h4>
+                    <div class="bg-gradient-to-r from-[#111111] to-[#161616] border border-[#1a1a1a] rounded-xl p-5 flex items-start gap-4">
+                        <div class="bg-[#e04316] text-white font-mono text-xs font-bold px-2.5 py-1.5 rounded uppercase tracking-tight shadow-md">
+                            AWS SAA
+                        </div>
+                        <div class="space-y-1">
+                            <span class="block text-sm font-bold text-[#f5f5f5]">Ultimate AWS Certified Solutions Architect Associate</span>
+                            <span class="block text-xs text-[#a3a3a3]">Issued by Udemy • June 16, 2026</span>
+                            <span class="inline-block text-[11px] font-mono font-medium bg-[#e04316]/10 text-[#ff815e] border border-[#e04316]/20 px-2 py-0.5 rounded mt-1">
+                                Preparation Complete (27 Hours Training)
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="about-hero-right">
-                <p class="about-lead">
+            <div class="lg:col-span-7 space-y-6 lg:pt-14">
+                <p class="text-xl font-bold text-[#f5f5f5] leading-relaxed border-l-2 border-[#e04316] pl-4">
                     I am a DevOps Engineer specializing in Infrastructure as Code (IaC), automated CI/CD release management, and optimizing high-availability cloud systems.
                 </p>
-                <div class="about-body-text">
+                <div class="text-sm text-[#a3a3a3] space-y-4 leading-relaxed font-normal">
                     <p>
-                        With a professional track record rooted in infrastructure stability, my experience includes maintaining critical environments during a 1.5-year tenure at LTIMindtree[cite: 1]. There, I authored declarative automation layouts using Terraform and Ansible[cite: 1], scaled infrastructure via AWS cloud resource allocation[cite: 1], and integrated strict logging matrices to maintain top application availability rates[cite: 1].
+                        With a professional track record rooted in infrastructure stability, my experience includes maintaining critical environments during a 1.5-year tenure at LTIMindtree. There, I authored declarative automation layouts using Terraform and Ansible, scaled infrastructure via AWS cloud resource allocation, and integrated strict logging matrices to maintain top application availability rates.
                     </p>
                     <p>
-                        Currently, I am working at Sarvika Technologies Pvt. Ltd.[cite: 1], providing high-level technical support[cite: 1], tracing runtime infrastructure vulnerabilities[cite: 1], and resolving environment complexities for software engineering platforms[cite: 1]. My ongoing focus is on building robust DevSecOps pipelines while blending clean Python scripting with cloud monitoring frameworks[cite: 1].
+                        Currently, I am working at Sarvika Technologies Pvt. Ltd., providing high-level technical support, tracing runtime infrastructure vulnerabilities, and resolving environment complexities for software engineering platforms. My ongoing focus is on building robust DevSecOps pipelines while blending clean Python scripting with cloud monitoring frameworks.
                     </p>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 lg:px-16 py-16 border-t border-[#1a1a1a]">
+        <div class="space-y-10">
+            <h2 class="text-2xl font-extrabold tracking-tight text-[#f5f5f5]">Professional Experience</h2>
+            
+            <div class="relative border-l border-[#262626] ml-3 pl-8 space-y-12">
+                
+                <div class="relative group">
+                    <span class="absolute -left-[37px] top-1 bg-[#e04316] w-2.5 h-2.5 rounded-full ring-4 ring-[#0a0a0a] group-hover:scale-125 transition-transform duration-200"></span>
+                    <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#a3a3a3] mb-1">
+                        <div class="flex items-center gap-3">
+                            <span class="text-[#e04316] font-semibold">Jan 2026 – Present</span>
+                            <span>•</span>
+                            <span class="text-[#f5f5f5] font-semibold">Sarvika Technologies Pvt. Ltd.</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#f5f5f5] mb-2">Tech-Support Executive</h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Providing high-level technical support and troubleshooting for software engineering projects and cloud-based infrastructure environments.
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <span class="absolute -left-[37px] top-1 bg-[#262626] group-hover:bg-[#e04316] w-2.5 h-2.5 rounded-full ring-4 ring-[#0a0a0a] group-hover:scale-125 transition-transform duration-200"></span>
+                    <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#a3a3a3] mb-1">
+                        <div class="flex items-center gap-3">
+                            <span class="text-[#a3a3a3] font-semibold">Jun 2022 – Mar 2024</span>
+                            <span>•</span>
+                            <span class="text-[#f5f5f5] font-semibold">LTIMindtree</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#f5f5f5] mb-2">DevOps Engineer</h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Designed and maintained highly available infrastructure using IaC with Terraform and Ansible. Reduced manual operations intervention by 60% via Shell and Python automation workflows while configuring Prometheus, Grafana, and ELK Stacks to manage core application runtimes.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- PROFESSIONAL ROADMAP TIMELINE -->
-    <section class="career-timeline-section">
-        <div class="section-container">
-            <h2 class="subpage-section-title">Professional Experience</h2>
-            <div class="timeline-wrapper">
-
-                <!-- Timeline Item 1: Sarvika -->
-                <div class="timeline-item">
-                    <div class="timeline-meta">
-                        <span class="timeline-date">Jan 2026 – Present</span>
-                        <span class="timeline-company">Sarvika Technologies Pvt. Ltd.</span>
-                    </div>
-                    <div class="timeline-details">
-                        <h3>Tech-Support Executive</h3>
-                        <p>Providing high-level technical support and troubleshooting for software engineering projects and cloud-based infrastructure environments[cite: 1].</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2: LTIMindtree -->
-                <div class="timeline-item">
-                    <div class="timeline-meta">
-                        <span class="timeline-date">Jun 2022 – Mar 2024</span>
-                        <span class="timeline-company">LTIMindtree</span>
-                    </div>
-                    <div class="timeline-details">
-                        <h3>DevOps Engineer</h3>
-                        <p>Designed and maintained highly available infrastructure using IaC with Terraform and Ansible[cite: 1]. Reduced manual operations intervention by 60% via Shell and Python automation workflows[cite: 1] while configuring Prometheus, Grafana, and ELK Stacks to manage core application runtimes[cite: 1].</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SYSTEM FOOTER -->
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2026 // Engineered for maximum availability and trust. Built with HTML & CSS.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
