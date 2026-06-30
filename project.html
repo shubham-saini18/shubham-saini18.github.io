@@ -4,137 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deployments & Projects | Cloud & DevOps Architect</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; }
+    </style>
 </head>
-<body class="subpage-body">
+<body class="text-[#f5f5f5] font-sans antialiased selection:bg-[#e04316]/30 selection:text-[#ff815e]">
 
-    <nav class="navbar subpage-nav">
-        <div class="logo">SS Portfolio</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="project.html" class="active-link">Projects</a>
-            <a href="mailto:sainishubham416@gmail.com" class="btn-nav">Get in touch <span class="arrow">&rarr;</span></a>
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#0a0a0a]/80 border-b border-[#1a1a1a] px-6 lg:px-16 py-4 flex justify-between items-center">
+        <div class="text-xl font-extrabold tracking-tight hover:text-[#e04316] transition-colors duration-200 cursor-pointer">
+            Shubham Saini
+        </div>
+        <div class="flex items-center gap-6 sm:gap-8 font-medium text-sm text-[#a3a3a3]">
+            <a href="index.html" class="transition-colors duration-200 hover:text-[#f5f5f5]">Home</a>
+            <a href="about.html" class="transition-colors duration-200 hover:text-[#f5f5f5]">About</a>
+            <a href="project.html" class="transition-colors duration-200 hover:text-[#f5f5f5] text-[#e04316] font-semibold">Projects</a>
+            <a href="mailto:sainishubham416@gmail.com" class="hidden sm:inline-flex items-center gap-2 border border-[#262626] px-4 py-2 rounded-full hover:border-[#ff815e] hover:text-[#ff815e] transition-all duration-300 group">
+                Contact <span class="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+            </a>
         </div>
     </nav>
 
-    <section class="project-hero-section">
-        <div class="project-hero-container">
-            <p class="section-tag">// Production Registries</p>
-            <h1>Engineered Deployments & Automated Pipelines</h1>
-            <p class="project-hero-lead">
+    <section class="max-w-7xl mx-auto px-6 lg:px-16 pt-16 pb-12">
+        <div class="max-w-3xl space-y-4">
+            <p class="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#e04316] uppercase tracking-widest bg-[#e04316]/5 border border-[#e04316]/10 px-3 py-1 rounded">
+                <i class="fa-solid fa-folder-open text-[10px]"></i> // Production Registries
+            </p>
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-[#f5f5f5]">
+                Engineered Deployments & <br><span class="text-[#e04316]">Automated Pipelines</span>
+            </h1>
+            <p class="text-base text-[#a3a3a3] leading-relaxed max-w-2xl">
                 A technical deep-dive into the infrastructure code bases, cloud environments, and continuous delivery systems I have designed, provisioned, and managed.
             </p>
         </div>
     </section>
 
-    <section class="projects-showcase-section">
-        <div class="showcase-container">
-            <div class="standalone-project-grid">
+    <section class="max-w-7xl mx-auto px-6 lg:px-16 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                
-                <div class="showcase-card">
-                    <div class="card-top-content">
-                        <div class="card-meta">
-                            <span class="card-id">REG_01 //</span>
-                            <span class="card-category">DevSecOps & GitOps Delivery</span>
-                        </div>
-                        <h3>Multi-Tier Java Spring Boot Banking Application</h3>
-                        <p>Designed an end-to-end continuous integration and deployment workflow for a high-security multi-tier banking 
-                            application written in Java (Spring Boot). Configured a robust Jenkins CI pipeline featuring automated 
-                            security gates including OWASP dependency checks, SonarQube quality analysis, and Trivy filesystem 
-                            vulnerability scans. Engineered declarative GitOps delivery using ArgoCD to synchronize application 
-                            states onto an AWS EKS cluster, managed and monitored completely via Helm charts integrated with Prometheus 
-                            and Grafana.</p>
-                        <div class="card-tags">
-                            <span>Spring Boot</span>
-                            <span>Jenkins CI</span>
-                            <span>OWASP & Trivy</span>
-                            <span>SonarQube</span>
-                            <span>ArgoCD</span>
-                            <span>AWS EKS</span>
-                            <span>Helm (Prometheus/Grafana)</span>
-                        </div>
+            <div class="bg-[#111111] border border-[#1a1a1a] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#262626] transition-all duration-300 group">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <span class="text-[#e04316] font-semibold">REG_01 //</span>
+                        <span class="text-[#a3a3a3]">DevSecOps & GitOps Delivery</span>
                     </div>
-                        <div class="project-architecture-container">
-                            <img src="images/Bank-app.png" alt="3-Tier Serverless Architecture Diagram" class="architecture-img">
-                        </div>
+                    <h3 class="text-xl font-bold tracking-tight text-[#f5f5f5] group-hover:text-[#e04316] transition-colors duration-200">
+                        Multi-Tier Java Spring Boot Banking Application
+                    </h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Designed an end-to-end continuous integration and deployment workflow for a high-security multi-tier banking application written in Java (Spring Boot). Configured a robust Jenkins CI pipeline featuring automated security gates including OWASP dependency checks, SonarQube quality analysis, and Trivy filesystem vulnerability scans. Engineered declarative GitOps delivery using ArgoCD to synchronize application states onto an AWS EKS cluster, managed and monitored completely via Helm charts integrated with Prometheus and Grafana.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Spring Boot</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Jenkins CI</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">OWASP & Trivy</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">SonarQube</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">ArgoCD</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS EKS</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Helm</span>
                     </div>
                 </div>
-                <div class="showcase-card">
-                    <div class="card-top-content">
-                        <div class="card-meta">
-                            <span class="card-id">REG_02 //</span>
-                            <span class="card-category">Serverless Architecture</span>
-                        </div>
-                        <h3>3-Tier Scalable Web Deployment</h3>
-                        <p>Architected a decoupled, highly scalable 3-tier web infrastructure optimized for zero-idle execution and 
-                            cost-efficient scaling. The frontend leverages Amazon Route 53 and CloudFront CDN for global edge delivery 
-                            of static assets secured in Amazon S3. Dynamic API requests are routed via an Application Load Balancer 
-                            (ALB) into a hybrid logic tier enclosed within a secure VPC, balancing event-driven micro-tasks via Amazon 
-                            API Gateway and AWS Lambda alongside containerized services managed by Amazon ECS (Fargate). The entire 
-                            ecosystem is backed by a highly available, ultra-low latency Amazon DynamoDB NoSQL data tier.</p>
-                        <div class="card-tags">
-                            <span>AWS Lambda</span>
-                            <span>Amazon S3</span>
-                            <span>DynamoDB</span>
-                            <span>Serverless</span>
-                            <span>AWS API Gateway</span>
-                            <span>AWS CloudFront</span>
-                            <span>AWS Route 53</span>
-                        </div>
-                        <div class="project-architecture-container">
-                            <img src="images/3-Tier Scalable Web Deployment.png" alt="3-Tier Serverless Architecture Diagram" class="architecture-img">
-                        </div>
-                        
-                    </div>
-                    
+                <div class="bg-[#0d0d0d] p-4 border-t border-[#1a1a1a] flex justify-center items-center">
+                    <img src="images/Bank-app.png" alt="Multi-Tier Java System Diagram" class="max-h-[220px] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
+            </div>
 
-                <div class="showcase-card">
-                    <div class="card-meta">
-                        <span class="card-id">REG_03 //</span>
-                        <span class="card-category">Observability & Logging</span>
+            <div class="bg-[#111111] border border-[#1a1a1a] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#262626] transition-all duration-300 group">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <span class="text-[#e04316] font-semibold">REG_02 //</span>
+                        <span class="text-[#a3a3a3]">Serverless Architecture</span>
                     </div>
-                    <h3>Centralized Logging Solution (ELK)</h3>
-                    <p>Deployed a comprehensive, centralized observability engine across critical environment nodes. Configured systemic
-                        log routers for real-time traffic record aggregation, storage, index mapping, and graphical metrics 
-                        visualization dashboards.</p>
-                    <div class="card-tags">
-                        <span>Elasticsearch</span>
-                        <span>Kibana</span>
-                        <span>Fluentd</span>
-                        <span>Log Aggregation</span>
-                        <span>AWS EKS</span>
-                        <span>AWS API Gateway</span>
-                        <span>AWS Kinesis Stream</span>
-                        
+                    <h3 class="text-xl font-bold tracking-tight text-[#f5f5f5] group-hover:text-[#e04316] transition-colors duration-200">
+                        3-Tier Scalable Web Deployment
+                    </h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Architected a decoupled, highly scalable 3-tier web infrastructure optimized for zero-idle execution and cost-efficient scaling. The frontend leverages Amazon Route 53 and CloudFront CDN for global edge delivery of static assets secured in Amazon S3. Dynamic API requests are routed via an Application Load Balancer (ALB) into a hybrid logic tier enclosed within a secure VPC, balancing event-driven micro-tasks via Amazon API Gateway and AWS Lambda alongside containerized services managed by Amazon ECS (Fargate). The entire ecosystem is backed by a highly available, ultra-low latency Amazon DynamoDB NoSQL data tier.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS Lambda</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Amazon S3</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">DynamoDB</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Serverless</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS API Gateway</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS CloudFront</span>
                     </div>
-                    <div class="project-architecture-container">
-                        <img src="images/elk.png" alt="3-Tier Serverless Architecture Diagram" class="architecture-img">
+                </div>
+                <div class="bg-[#0d0d0d] p-4 border-t border-[#1a1a1a] flex justify-center items-center">
+                    <img src="images/3-Tier Scalable Web Deployment.png" alt="3-Tier Serverless Architecture Diagram" class="max-h-[220px] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </div>
+
+            <div class="bg-[#111111] border border-[#1a1a1a] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#262626] transition-all duration-300 group">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <span class="text-[#e04316] font-semibold">REG_03 //</span>
+                        <span class="text-[#a3a3a3]">Observability & Logging</span>
                     </div>
-            <div class="showcase-card">
-                    <div class="card-meta">
-                        <span class="card-id">REG_04 //</span>
-                        <span class="card-category">Infrastructure as Code</span>
+                    <h3 class="text-xl font-bold tracking-tight text-[#f5f5f5] group-hover:text-[#e04316] transition-colors duration-200">
+                        Centralized Logging Solution (ELK)
+                    </h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Deployed a comprehensive, centralized observability engine across critical environment nodes. Configured systemic log routers for real-time traffic record aggregation, storage, structured index mapping, routing mechanisms, and graphical live metrics visualization dashboard layouts.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Elasticsearch</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Kibana</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Fluentd</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Log Aggregation</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS EKS</span>
                     </div>
-                    <h3>Automated EKS Cluster Setup</h3>
-                    <p>Automated the creation of a highly scalable, production-grade Elastic Kubernetes Service (EKS) cluster on AWS. This configuration orchestrates resource instantiation entirely through code, leveraging shell wrappers for specialized environment setup.</p>
-                    <div class="card-tags">
-                        <span>Terraform</span>
-                        <span>Ansible</span>
-                        <span>AWS EKS</span>
-                        <span>AWS CloudFormation</span>
-                        <span>AWS ECS</span>
-                        <span>AWS Secrets Manager</span>
-                        
+                </div>
+                <div class="bg-[#0d0d0d] p-4 border-t border-[#1a1a1a] flex justify-center items-center">
+                    <img src="images/elk.png" alt="ELK Stack Setup Diagram" class="max-h-[220px] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </div>
+
+            <div class="bg-[#111111] border border-[#1a1a1a] rounded-2xl overflow-hidden flex flex-col justify-between hover:border-[#262626] transition-all duration-300 group">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between text-xs font-mono">
+                        <span class="text-[#e04316] font-semibold">REG_04 //</span>
+                        <span class="text-[#a3a3a3]">Infrastructure as Code</span>
                     </div>
-                    <div class="project-architecture-container">
-                        <img src="images/Iac.png" alt="3-Tier Serverless Architecture Diagram" class="architecture-img">
-                    
+                    <h3 class="text-xl font-bold tracking-tight text-[#f5f5f5] group-hover:text-[#e04316] transition-colors duration-200">
+                        Automated EKS Cluster Setup
+                    </h3>
+                    <p class="text-sm text-[#a3a3a3] leading-relaxed">
+                        Automated the creation of a highly scalable, production-grade Elastic Kubernetes Service (EKS) cluster on AWS. This configuration orchestrates core cluster lifecycle instances entirely through code architectures, leveraging native customized shell wrappers for specialized environment setup playbooks.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 pt-2">
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Terraform</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Ansible</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS EKS</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">Shell Scripting</span>
+                        <span class="bg-[#161616] border border-[#262626] text-xs font-medium text-[#d4d4d4] px-2.5 py-1 rounded">AWS Secrets Manager</span>
+                    </div>
+                </div>
+                <div class="bg-[#0d0d0d] p-4 border-t border-[#1a1a1a] flex justify-center items-center">
+                    <img src="images/Iac.png" alt="IaC Pipeline Infrastructure Layout Diagram" class="max-h-[220px] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="border-t border-[#1a1a1a] bg-[#0d0d0d]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-[#a3a3a3]">
+            <p>&copy; 2026 // Engineered for maximum availability and trust.</p>
+            <div class="flex items-center gap-6 text-base">
+                <a href="https://linkedin.com" target="_blank" class="hover:text-[#ff815e] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Shubham-Saini" target="_blank" class="hover:text-[#ff815e] transition-colors"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
-    
+    </footer>
+
+</body>
+</html>
